@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Jurídica</title>
+    <!-- Incluir Bootstrap desde un CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para todos los inputs del formulario */
+        .custom-input {
+            background-color: #f0f8ff; /* Color de fondo */
+            border: 2px solid #007bff; /* Borde azul */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px; /* Espaciado interno */
+            margin-bottom: 15px; /* Espaciado entre campos */
+        }
+
+        /* Pseudoclases para los inputs */
+        .custom-input:focus {
+            background-color: #e6f7ff; /* Color de fondo al enfocar */
+            border-color: #0056b3; /* Color del borde al enfocar */
+        }
+
+        .custom-input:hover {
+            border-color: #0056b3; /* Color del borde al pasar el mouse */
+        }
+
+        /* Estilos para el footer */
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Menú de navegación -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Estudio Jurídico</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <h1>Formulario de Consulta</h1>
+            <form id="consultaForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control custom-input" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" class="form-control custom-input" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" class="form-control custom-input" id="ciudad" name="ciudad" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" class="form-control custom-input" id="fechaNacimiento" name="fechaNacimiento" required>
+                </div>
+                <div class="form-group">
+                    <label for="consulta">Consulta:</label>
+                    <textarea class="form-control custom-input" id="consulta" name="consulta" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; 2023 Estudio Jurídico. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+   
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Función que se ejecuta cuando el formulario se envía
+        document.getElementById("consultaForm").addEventListener("submit", function(event) {
+            // Evitar el envío del formulario vacío
+            event.preventDefault();
+            
+            // Obtener los valores del formulario
+            let nombre = document.getElementById("nombre").value;
+            let apellido = document.getElementById("apellido").value;
+            let ciudad = document.getElementById("ciudad").value;
+            let fechaNacimiento = document.getElementById("fechaNacimiento").value;
+            let consulta = document.getElementById("consulta").value;
+
+            // Mostrar el mensaje de alerta
+            alert(`Gracias por tu consulta, ${nombre} ${apellido} de ${ciudad}. Hemos recibido tu consulta y nos pondremos en contacto pronto.`);
+            
+        });
+    </script>
+
+</body>
+</html>
